@@ -1,14 +1,22 @@
 public class Book{
     private String title;
-    private String author;
+    private Writer writer;
+    private Publisher publisher;
+    private String yearOfPub;
 
-    public Book(String title, String author){
+    public Book(String title, Writer writer, String yearOfPub, Publisher publisher){
         this.title = title;
-        this.author = author;
+        this.writer = writer;
+        this.yearOfPub = yearOfPub;
+        this.publisher = publisher;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getYearOfPub() {
+        return yearOfPub;
+    }
+
+    public void setYearOfPub(String yearOfPub) {
+        this.yearOfPub = yearOfPub;
     }
 
     public String getTitle() {
@@ -17,7 +25,10 @@ public class Book{
 
     public void display(){
         System.out.println("Title: " + getTitle());
-        System.out.println("Author: " + getAuthor());
+        writer.display();
+        System.out.println("Year of publication: " + getYearOfPub());
+        System.out.println("Publisher Name: " + publisher.getName());
+        System.out.println("Publisher City: " + publisher.getCity());
     }
     
 }

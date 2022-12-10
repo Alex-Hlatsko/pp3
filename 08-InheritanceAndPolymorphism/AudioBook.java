@@ -2,8 +2,8 @@ public class AudioBook extends Book {
     private int minutes;
     private int seconds;
 
-    AudioBook(String title, String author, int minutes, int seconds){
-        super(title, author);
+    AudioBook(String title, Writer writer, String yearOfPub, Publisher publisher, int minutes, int seconds){
+        super(title, writer, yearOfPub, publisher);
         this.minutes = minutes;
         this.seconds = seconds;
     }
