@@ -3,12 +3,14 @@ public class TV implements CanOnOff, CanChangeChannel, CanChangeVolume{
     private int channel_num;
     private int watch_channel;
     private int volume_level;
+    private String[] channels;
 
     public TV(int channel_num) {
         this.isOn = false;
         this.channel_num = channel_num;
         this.volume_level = 1;
         this.watch_channel = 1;
+        this.channels = new String[] {"First name", "Second Name", "Third Name", "Fourth name"};
     }
 
     //Getters and Setters
@@ -44,13 +46,22 @@ public class TV implements CanOnOff, CanChangeChannel, CanChangeVolume{
         this.watch_channel = watch_channel;
     }
 
-   //Main methods
+   public String[] getChannels() {
+        return channels;
+    }
+
+    public void setChannels(String[] channels) {
+        this.channels = channels;
+    }
+
+    //Main methods
     public void displayInfo(){
         System.out.println("TV");
         System.out.println("Count of channels: " + getChannel_num());
         System.out.println(isOn ? "Tv on" : "Tv off");
         System.out.println(isOn() ? "Channel: " + getWatch_channel() : "");
         System.out.println(isOn() ? "Volume: " + getVolume_level() : "");
+        System.out.println(isOn() ? "Channel: " + (getWatch_channel()-1 >=4 ? "no name" : getChannels()[getWatch_channel()-1]) : "");
     }
 
     @Override
