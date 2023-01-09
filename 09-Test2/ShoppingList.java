@@ -9,9 +9,9 @@ public class ShoppingList{
     public String toString(){
         String str = "";
         for(Product product : products){
-            str += product.getTitle() + ", ";
+            str += product.getTitle() + ",";
         }
-        return str;
+        return str.substring(0, str.length()-1);
     }
 
     public int total(){
